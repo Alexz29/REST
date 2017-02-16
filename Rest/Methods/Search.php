@@ -27,12 +27,14 @@ class Search
         $queryValue=[];
 
         $request=Request::getData('get');
+
         foreach($model->attributes() as $key=>$val){
             if(isset($request[$key])){
                 $queryString.=" $key = ? and";
                 array_push($queryValue, $request[$key]);
             }
         }
+
         array_unshift($queryValue, trim($queryString, "and"));
         $model = $model::find('all',[
             'conditions' => $queryValue
