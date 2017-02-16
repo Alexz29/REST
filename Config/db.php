@@ -10,32 +10,10 @@
  */
 
 return $db=[
-
-    /**
-     * connection name
-     */
     'mysql'=>[
-
-        /**
-         * db host
-         * Example: localhost or localhost:port
-         * default port 3306
-         */
-        'host'=>'localhost',
-
-        /**
-         * db name
-         */
-        'dbname'=>'yii_store',
-
-        /**
-         * db username
-         */
-        'user'=>'root',
-
-        /**
-         * db password
-         */
-        'password'=>'Annushka000'
+        'host'=>'',
+        'dbname'=>'',
+        'user'=>'',
+        'password'=>''
     ]
 ];
