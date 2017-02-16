@@ -1,7 +1,7 @@
 <?php
 /**
- * Created by Diveev Alexey
- * Email: Alexz29@yandex.ru
+ * Created by Alexey Diveev
+ * Email: a.a.diveev@gmail.com
  */
 
 namespace Rest;
@@ -22,7 +22,8 @@ abstract class Serializer
     /**
      * Function forward model to adapter for convert
      * @param $model  object ActiveRecord
-     * @param $format string REST\Adapters\* - adapters json or xml, etc. json by default
+     * @param $format string REST\Adapters\* - adapters json or xml, etc.
+     * json by default
      * @return mixed  string output
      * @throws \Exception
      */

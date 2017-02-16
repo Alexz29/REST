@@ -1,15 +1,27 @@
 <?php
 /**
- * Created by Diveev Alexey
- * Email: Alexz29@yandex.ru
+ * Created by Alexey Diveev
+ * Email: a.a.diveev@gmail.com
  */
 
 namespace Rest\Methods;
 use Common\Request;
 use Rest\Serializer;
 
+/**
+ * Class Update
+ * @package Rest\Methods
+ */
 class Update extends BaseMethod
 {
+    /**
+     * Update Item
+     * Available POST & PUT Methods
+     * Require id - get param
+     *
+     * @param $model
+     * @throws \Exception
+     */
     public function index($model)
     {
         $request=Request::getData('get');

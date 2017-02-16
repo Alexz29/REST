@@ -1,7 +1,5 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: alexey
- * Date: 11.02.17
- * Time: 16:28
+ * Created by Alexey Diveev
+ * Email: a.a.diveev@gmail.com
  */

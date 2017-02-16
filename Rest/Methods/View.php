@@ -1,7 +1,7 @@
 <?php
 /**
- * Created by Diveev Alexey
- * Email: Alexz29@yandex.ru
+ * Created by Alexey Diveev
+ * Email: a.a.diveev@gmail.com
  */
 
 namespace Rest\Methods;
@@ -10,6 +10,13 @@ use Rest\Serializer;
 
 class View extends BaseMethod
 {
+    /**
+     * View one item by id
+     * Available only GET request
+     *
+     * @param $model
+     * @throws \Exception
+     */
     public function index($model)
     {
         $request=Request::getData('get');

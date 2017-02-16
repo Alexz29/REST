@@ -1,11 +1,10 @@
 <?php
 /**
- * Created by Diveev Alexey
- * Email: Alexz29@yandex.ru
+ * Created by Alexey Diveev
+ * Email: a.a.diveev@gmail.com
  */
 
 namespace Rest\Methods;
-use Common\Request;
 
 /**
  * Class BaseMethod
@@ -14,7 +13,7 @@ use Common\Request;
 class BaseMethod
 {
     /**
-     * @var array reserve word
+     * @var array reserved word
      */
     public static $rWords=[
         'per_page',
@@ -22,22 +21,4 @@ class BaseMethod
         'format'
     ];
 
-//    /**
-//     * BaseMethod constructor.
-//     */
-//    public function __construct()
-//    {
-////        $this->postRequest=$_POST;
-//
-//        foreach ($this->getRequest=$_GET as $key=>$value){
-//            if (in_array($key, $this->rWords)) {
-//
-//                $this->{$key}=$value;
-//                unset($this->getRequest[$key]);
-//            }
-//        }
-//
-//        if(!isset($this->format))
-//            $this->format='json';
-//    }
 }
