@@ -5,14 +5,6 @@ Rest base on Submodules:
 
 - PHP ActiveRecord - Version 1.0
 
-by
-
-@kla - Kien La
-
-@jpfuentes2 - Jacques Fuentes
-
-And these terrific Contributors
-
 http://www.phpactiverecord.org/
 
 
