@@ -6,6 +6,17 @@
 
 date_default_timezone_set('America/Los_Angeles');
 
+
+//set handler for catch ActiveRecord Exception
+set_exception_handler(function ($exception) {
+    try {
+        throw new \Common\MyException($exception->getMessage());
+    } catch (\Common\MyException $e) {
+        echo $e->getJsonMessage();
+    }
+});
+
+
 define('ROOT_DIR', __DIR__);
 
 require_once __DIR__ . '/Common/Autoloader.php';

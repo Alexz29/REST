@@ -34,21 +34,22 @@ class Router
         // Routing
         //-------------------------------------------
         try{
-
             if(isset($_SERVER['PATH_INFO']))
                 $path=explode("/",trim($_SERVER['PATH_INFO'], "/"));
             else
-                throw new MyException("Request is empty", 404);
+                throw new MyException("Request is empty", 500);
 
-            $pathClass='Models\\'.$path[0];
-            $pathMethod='Rest\Methods\\'.ucfirst($path[1]);
+            $pathClass='Models\\'.@$path[0];
+            $pathMethod='Rest\Methods\\'.ucfirst(@$path[1]);
 
             $method= new $pathMethod;
             $method->index($pathClass);
 
         }catch (MyException $e){
+            http_response_code($e->getCode());
             echo $e->getJsonMessage();
         }
 
     }
+
 }
