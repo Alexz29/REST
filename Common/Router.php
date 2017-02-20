@@ -36,11 +36,16 @@ class Router
         $path=explode("/",trim($_SERVER['PATH_INFO'], "/"));
 
         $pathClass='Models\\'.$path[0];
-        $model=new $pathClass;
-
         $pathMethod='Rest\Methods\\'.ucfirst($path[1]);
 
-        $method= new $pathMethod;
-        $method->index($model);
+        try{
+
+            $method= new $pathMethod;
+            $method->index($pathClass);
+
+        }catch (MyException $e){
+            echo $e->getJsonMessage();
+        }
+
     }
 }
