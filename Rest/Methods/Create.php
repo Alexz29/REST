@@ -23,6 +23,7 @@ class Create extends BaseMethod
     public function index($model)
     {
         $newModel = new $model();
+
         $data = (Request::getData('post') ? Request::getData('post') : Request::getData('patch'));
 
         //delete primary key from request

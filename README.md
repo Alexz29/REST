@@ -3,8 +3,7 @@ Developed by Alex Diveev
 
 Rest base on Submodules:
 
-- PHP ActiveRecord - Version 1.0
-
+* PHP ActiveRecord - Version 1.0
 http://www.phpactiverecord.org/
 
 
