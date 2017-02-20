@@ -2,7 +2,6 @@
 /**
  * Created by Diveev Alexey
  * Email: Alexz29@yandex.ru
- * License: GPLv3
  *
  * Config file db connection.
  * Support dbs:
@@ -10,10 +9,6 @@
  */
 
 return $db=[
-    'mysql'=>[
-        'host'=>'',
-        'dbname'=>'',
-        'user'=>'',
-        'password'=>''
-    ]
+    // '<connection-name>'=>"<driver>://<user>:<password>@<host:port>/<db-name>"
+    'production' => "mysql://root:annushka000@localhost/yii_store"
 ];

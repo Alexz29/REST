@@ -16,7 +16,7 @@ use Common\Router;
 use Common\DbConnection;
 
 
-DbConnection::init();
+DbConnection::init($db);
 Router::run();
 
 

@@ -15,12 +15,10 @@ class DbConnection
 {
     /**
      * Connect to db use Active record
+     *
+     * @param $connections
      */
-    public static function init(){
-        $connections = array(
-            'development' => 'mysql://invalid',
-            'production' => "mysql://root:annushka000@localhost/yii_store"
-        );
+    public static function init($connections){
 
         // initialize ActiveRecord
         ActiveRecord\Config::initialize(function($cfg) use ($connections)

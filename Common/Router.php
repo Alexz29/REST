@@ -33,12 +33,15 @@ class Router
         //-------------------------------------------
         // Routing
         //-------------------------------------------
-        $path=explode("/",trim($_SERVER['PATH_INFO'], "/"));
-
-        $pathClass='Models\\'.$path[0];
-        $pathMethod='Rest\Methods\\'.ucfirst($path[1]);
-
         try{
+
+            if(isset($_SERVER['PATH_INFO']))
+                $path=explode("/",trim($_SERVER['PATH_INFO'], "/"));
+            else
+                throw new MyException("Request is empty", 404);
+
+            $pathClass='Models\\'.$path[0];
+            $pathMethod='Rest\Methods\\'.ucfirst($path[1]);
 
             $method= new $pathMethod;
             $method->index($pathClass);
