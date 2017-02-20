@@ -10,7 +10,7 @@ date_default_timezone_set('America/Los_Angeles');
 //set handler for catch ActiveRecord Exception
 set_exception_handler(function ($exception) {
     try {
-        throw new \Common\MyException($exception->getMessage());
+        throw new \Common\MyException($exception->getMessage(), 200);
     } catch (\Common\MyException $e) {
         echo $e->getJsonMessage();
     }

@@ -19,13 +19,15 @@ class Autoloader
 
         $class = str_replace('\\','/', $class);
 
-         if(!file_exists(ROOT_DIR.'/'.$class.'.php'))
-             throw new MyException("file $class does not exist", 500);
+//        var_dump($class);
+
+        if(!file_exists(ROOT_DIR.'/'.$class.'.php'))
+            throw new MyException("Incorrect request $class Example {model}/{create|delete|index|search|update}", 500);
 
         require $class . '.php';
 
         if(!class_exists($class))
-            throw new MyException("Class $class does not exist", 500);
+            throw new MyException("Class `$class` does not exist", 500);
 
     }
 }

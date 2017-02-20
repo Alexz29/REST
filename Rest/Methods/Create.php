@@ -5,6 +5,7 @@
  */
 
 namespace Rest\Methods;
+use Common\MyException;
 use Rest\Serializer;
 use Common\Request;
 
@@ -19,12 +20,16 @@ class Create extends BaseMethod
      * Available methods POST & PATCH
      *
      * @param $model
+     * @throws \Exception
      */
     public function index($model)
     {
         $newModel = new $model();
 
         $data = (Request::getData('post') ? Request::getData('post') : Request::getData('patch'));
+
+        if(!isset($data))
+            throw new MyException("Data is empty. Please use methods: POST, PATCH", 500);
 
         //delete primary key from request
         unset($data[$newModel::$primary_key]);

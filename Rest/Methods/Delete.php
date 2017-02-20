@@ -5,6 +5,8 @@
  */
 
 namespace Rest\Methods;
+use Common\MyException;
+use Common\Request;
 
 /**
  * Class Delete
@@ -25,7 +27,7 @@ class Delete extends BaseMethod
         $request = (Request::getData('post') ? Request::getData('post') : Request::getData('get'));
 
         if(!isset($request['id']))
-            throw new \Exception("Require param id not found!");
+            throw new MyException("Require param id not found!", 500);
 
         $model = $model::find($request['id']);
 

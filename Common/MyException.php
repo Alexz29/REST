@@ -27,6 +27,7 @@ class MyException extends \Exception
      */
     public function getJsonMessage(){
         return json_encode([
+            'error'=>true,
             'code'=>$this->code,
             'message'=>$this->message
         ]);
