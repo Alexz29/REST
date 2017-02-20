@@ -19,12 +19,7 @@ git submodule init
 Config path: Config/db.php
 
 ```$xslt
-'mysql'=>[
-        'host'=>'localhost',
-        'dbname'=>'',
-        'user'=>'',
-        'password'=>''
-    ]
+// '<connection-name>'=>"<driver>://<user>:<password>@<host:port>/<db-name>"
 ```
 
 ##Run
