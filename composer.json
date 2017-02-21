@@ -1,0 +1,24 @@
+{
+    "name": "Alexz29/REST",
+    "description": "Easy REST",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Alex Diveev",
+            "email": "a.a.diveev@gmail.com"
+        }
+    ],
+
+    "repositories" : [
+        {
+            "type" : "git",
+            "url"  : "git@github.com:jpfuentes2/php-activerecord.git"
+        }
+    ],
+
+    "require": {
+        "php-activerecord/php-activerecord": "*"
+    },
+
+    "minimum-stability": "dev"
+}

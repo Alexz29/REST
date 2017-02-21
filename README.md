@@ -13,7 +13,8 @@ http://www.phpactiverecord.org/
 ##Install
 ```
 git clone https://github.com/Alexz29/REST.git
-git submodule init
+
+php composer.phar update
 ```
 
 Config path: Config/db.php
