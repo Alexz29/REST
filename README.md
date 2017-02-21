@@ -22,6 +22,32 @@ Config path: Config/db.php
 // '<connection-name>'=>"<driver>://<user>:<password>@<host:port>/<db-name>"
 ```
 
+
+
+##Create model
+
+Models path Models/<model_name>.php
+
+Examle: Models/Post.php
+```php
+<?php
+namespace Models;
+use ActiveRecord;
+
+class Post  extends ActiveRecord\Model
+{
+    // explicit table name since our table is not "books"
+    static $table_name = 'yii_post';
+
+    // explicit pk since our pk is not "id"
+    static $primary_key = 'id';
+
+    // explicit connection name since we always want production with this model
+    static $connection = 'production';
+}
+```
+
+
 ##Run
 ```$xslt
 php -S localhost:6100
