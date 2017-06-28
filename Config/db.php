@@ -10,5 +10,5 @@
 
 return $db=[
     // '<connection-name>'=>"<driver>://<user>:<password>@<host:port>/<db-name>"
-    'production' => "mysql://root:annushka000@localhost/yii_store"
+    'production' => "mysql://root:pass@localhost/yii_store"
 ];
