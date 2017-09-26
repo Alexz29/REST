@@ -9,6 +9,5 @@
  */
 
 return $db=[
-    // '<connection-name>'=>"<driver>://<user>:<password>@<host:port>/<db-name>"
-    'production' => "mysql://root:annushka000@localhost/yii_store"
+    'production' => "sqlite://Data/test.db"
 ];

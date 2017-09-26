@@ -19,8 +19,6 @@ class Autoloader
 
         $class = str_replace('\\','/', $class);
 
-//        var_dump($class);
-
         if(!file_exists(ROOT_DIR.'/'.$class.'.php'))
             throw new MyException("Incorrect request $class Example {model}/{create|delete|index|search|update}", 500);
 
