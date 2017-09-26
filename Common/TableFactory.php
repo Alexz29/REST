@@ -19,7 +19,7 @@ class Table
     /**
      * @var string table name
      */
-    private $tabel_name;
+    private $table_name;
 
     /**
      * @var object model fot table
@@ -32,32 +32,28 @@ class Table
     private $connection;
 
     /**
-     * @var string attributes for query
+     * @var string query for db
      */
-    private $_attr;
+    private $query;
 
     /**
      * Table constructor.
      * @param $model
      * @param $connection
+     * @param $query
      */
-    public function __construct($model, $connection){
+    public function __construct($model, $connection, $query){
         $this->model = $model;
         $this->connection = $connection;
-        $this->tabel_name=$model::$table_name;
+        $this->table_name = $model::$table_name;
+        $this->query=$query;
     }
 
     /**
-     * Create table in db
+     * Exec query
      */
     public function exec(){
-        foreach ($this->model->fields() as $key => $val)
-            $this->_attr.= $key . ' ' . $val . ', ';
-
-        $attr = trim($this->_attr, ', ');
-        $this->connection->query("CREATE TABLE $this->table_name ($attr)");
-
-        return true;
+        $this->connection->query($this->query);
     }
 }
 
@@ -85,6 +81,20 @@ class TableFactory
      * @return Table
      */
     public static function createByModel($model, $connection){
-        return new Table($model, $connection);
+
+        $_attr=null;
+        foreach ($model->fields() as $key => $val) {
+            $_attr .= $key . ' ' . $val . ', ';
+        }
+        $attr = trim($_attr, ', ');
+        $query="CREATE TABLE ". $model::$table_name ."(".$attr.")";
+
+        return new Table($model, $connection, $query);
+    }
+
+    public static function deleteTable($model, $connection){
+
+        $query="DROP TABLE ". $model::$table_name ;
+        return new Table($model, $connection, $query);
     }
 }
